@@ -36,6 +36,7 @@ def find_non_danone_emails(emails_in_text):
             # Add non-Danone email addresses to the 'not_danone_addresses' list
             not_danone_addresses.append(i)
 
+# Function for the input loop
 def input_loop():
     text_input = input()
     if text_input == "file":
@@ -46,8 +47,8 @@ def input_loop():
         find_emails(text_input)
         input_loop()
 
+# Main function
 def main():
-
     print('''
     Enter "quit" on a new line to close the application.
     Enter "exit" on a new line to finish input.
@@ -56,18 +57,14 @@ def main():
     ''')
 
     input_loop()
-
     # Display the retrieved email addresses
     print("\nEmail Addresses:\n")
     for i in retrieved_addresses:
         print(f"{i},")
-
     # Display the total number of email addresses found
     print(f"\nTotal email addresses found: {len(retrieved_addresses)}\n")
-
     # Display a comma-separated list of retrieved email addresses
     print(f"Copy this:\n {', '.join(retrieved_addresses)}")
-
     # Display non-Danone email addresses in comma-separated list
     print("\nThese are non-Danone e-mail addresses:\n", ', '.join(not_danone_addresses))
     main()
